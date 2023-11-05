@@ -1,12 +1,11 @@
 package com.jit.test;
 
-import java.sql.SQLException;
-import java.util.Map;
-
-
 import com.jit.common.utils.DataSourceUtil;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.MapHandler;
+
+import java.sql.SQLException;
+import java.util.Map;
 
 
 /**

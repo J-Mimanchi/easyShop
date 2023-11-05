@@ -1,11 +1,7 @@
 package com.jit.common.utils;
 
 import java.security.MessageDigest;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Random;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 /**
  * java常用工具类

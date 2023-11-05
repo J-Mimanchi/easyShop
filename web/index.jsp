@@ -13,6 +13,60 @@
 </head>
 
 <body>
+
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<script type="text/javascript">
+	$(function() {
+		//加载楼层信息
+		function floor_load(){
+			$.post("${pageContext.request.contextPath}/indexFloor",
+					function(data) {
+						var index_cont = ''
+						for (var i = 0; i < data.length; i++) {
+							var pcode = data[i]
+							index_cont +='<div class="container-fluid">';
+							index_cont +='<div class="col-md-12"><h3>'+ pcode.param1+'</h3></div>';
+							index_cont +='<div class="col-md-3" style="hight: 400px; width: 360px; padding: 0px 0px;"> <img src="'+ pcode.param3 +'" style="height: 420px; display: inline-block;" /></div>';
+							index_cont +='<div class="col-md-8" id="'+ pcode.param7 +'"></div>';
+							index_cont +='<div class="col-md-1" style="hight: 400px; padding: 0px 0px;"> <img src="'+ pcode.param5 +'" style="height: 420px; width: 190px; display: inline-block;" /></div>';
+							index_cont +='</div>';
+						}
+						$("#index_cont").append(index_cont);
+					}, "json");
+		}
+		floor_load();
+	});
+	function hot_product_load(){
+		$.post("${pageContext.request.contextPath}/hotproduct",
+				function(datas) {
+					for(var index=0; index < datas.length; index++){
+						var data = datas[index]
+						var floorNo = data.floorNo;//获取楼层
+						var hotProducts = data.hotProducts;//获取楼层对应的数据
+						if(hotProducts.length>0){
+							var hotProduct='';
+							for (var i = 0; i < hotProducts.length; i++) {
+								product = hotProducts[i];
+								hotProduct+='<div class="col-md-2" style="text-align: center; height: 200px; padding: 10px 0px;">';
+								hotProduct+='<a href="${pageContext.request.contextPath}/product?method=productInfo&pid='+product.pid+'&cid='+product.cid+'&currentPage=1"><img src="'+product.pimage+'" style="display: inline-block;width:150px;height:150px;"></a>';
+								hotProduct+='<p style="height: 22px; width: 170px; overflow: hidden;text-align: center;margin: auto;">';
+								hotProduct+='<a href="product?method=productInfo&pid='+product.pid+'&cid='+product.cid+'&currentPage=1" style="color: #666">'+product.pname+'</a></p><p>';
+								hotProduct+='<font color="#E4393C" style="font-size: 16px">&yen;'+product.shop_price+'</font></p></div>';
+							}
+							//console.log(hotProduct);
+							var floorObj = document.getElementById(floorNo);
+							var $floorObj = $(floorObj);
+							//console.log($floorObj);
+							$floorObj.append(hotProduct);
+						}
+					}
+				}, "json");
+	}
+
+</script>
+
+
 	<div id="index_cont" class="container-fliud">
 
 		<!-- 引入header.jsp -->

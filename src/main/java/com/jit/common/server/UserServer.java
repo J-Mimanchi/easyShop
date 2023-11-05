@@ -27,6 +27,7 @@ public class UserServer {
     public boolean checkUsername(String username) {
         //调用dao判断是否存在
         Long count = 0L;
+
         try {
             count = userDao.checkUsername(username);
         } catch (SQLException e) {
