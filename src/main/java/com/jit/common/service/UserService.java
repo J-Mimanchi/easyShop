@@ -1,11 +1,11 @@
-package com.jit.common.server;
+package com.jit.common.service;
 
 import com.jit.common.dao.UserDao;
 import com.jit.common.domain.User;
 
 import java.sql.SQLException;
 
-public class UserServer {
+public class UserService {
     UserDao userDao = new UserDao();
     public boolean register(User user){
         try {

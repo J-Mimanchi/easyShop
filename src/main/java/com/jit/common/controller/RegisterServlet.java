@@ -1,7 +1,7 @@
 package com.jit.common.controller;
 
 import com.jit.common.domain.User;
-import com.jit.common.server.UserServer;
+import com.jit.common.service.UserService;
 import com.jit.common.utils.CommonUtil;
 import com.jit.common.utils.MailUtil;
 import org.apache.commons.beanutils.BeanUtils;
@@ -18,7 +18,7 @@ import java.util.Map;
 @WebServlet("/register")
 public class RegisterServlet extends HttpServlet {
 
-    private UserServer userServer = new UserServer();
+    private UserService userServer = new UserService();
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

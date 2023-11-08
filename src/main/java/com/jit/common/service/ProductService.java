@@ -1,17 +1,17 @@
-package com.jit.common.server;
+package com.jit.common.service;
 
 import com.jit.common.dao.ProductDao;
-import com.jit.common.entitys.FloorVo;
-import com.jit.common.entitys.Pcode;
-import com.jit.common.entitys.Product;
+import com.jit.common.domain.FloorVo;
+import com.jit.common.domain.Pcode;
+import com.jit.common.domain.Product;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductServer {
+public class ProductService {
     public List<FloorVo> findeFloorsHotProducts(int start, int pagesize)
     {
-        PcodeServer dao = new PcodeServer();
+        PcodeService dao = new PcodeService();
         ProductDao pdao = new ProductDao();
 
         List<Pcode> pcodeList = dao.findPcodeListByCodeType("4");

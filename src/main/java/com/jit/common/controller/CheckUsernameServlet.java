@@ -1,6 +1,6 @@
 package com.jit.common.controller;
 
-import com.jit.common.server.UserServer;
+import com.jit.common.service.UserService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,7 +16,7 @@ public class CheckUsernameServlet extends HttpServlet {
         //获取参数
         String username = req.getParameter("username");
         //service验证是否存在
-        UserServer service = new UserServer();
+        UserService service = new UserService();
         boolean isExist = service.checkUsername(username);
         String json = "{\"isExist\":"+isExist+"}";//不要写成"{‘isExist‘:"+isExist+"}"
         resp.getWriter().write(json);

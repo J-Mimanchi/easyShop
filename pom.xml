@@ -24,30 +24,33 @@
         <scope>provided</scope>
     </dependency>
 
-
     <!-- jdbc驱动 -->
     <dependency>
         <groupId>mysql</groupId>
         <artifactId>mysql-connector-java</artifactId>
-        <version>8.0.28</version>
+        <version>8.0.33</version>
     </dependency>
+
     <!-- 数据库连接池 -->
     <dependency>
         <groupId>com.alibaba</groupId>
         <artifactId>druid</artifactId>
         <version>1.1.6</version>
     </dependency>
+
     <!-- dbutil工具类 -->
     <dependency>
         <groupId>commons-dbutils</groupId>
         <artifactId>commons-dbutils</artifactId>
         <version>1.7</version>
     </dependency>
+
     <dependency>
         <groupId>com.alibaba</groupId>
         <artifactId>fastjson</artifactId>
         <version>1.2.83</version>
     </dependency>
+
     <dependency>
         <groupId>commons-beanutils</groupId>
         <artifactId>commons-beanutils-core</artifactId>
@@ -59,12 +62,20 @@
         <artifactId>mail</artifactId>
         <version>1.4</version>
     </dependency>
+
     <!-- junit测试包 -->
     <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
-        <version>4.12</version>
+        <version>4.13.1</version>
         <scope>test</scope>
+    </dependency>
+
+    <!-- jstl -->
+    <dependency>
+        <groupId>jstl</groupId>
+        <artifactId>jstl</artifactId>
+        <version>1.2</version>
     </dependency>
 
 </dependencies>

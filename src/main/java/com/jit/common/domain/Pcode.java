@@ -1,4 +1,4 @@
-package com.jit.common.entitys;
+package com.jit.common.domain;
 
 public class Pcode {
     private int id;

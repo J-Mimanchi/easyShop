@@ -1,4 +1,4 @@
-package com.jit.common.entitys;
+package com.jit.common.domain;
 
 import java.util.List;
 

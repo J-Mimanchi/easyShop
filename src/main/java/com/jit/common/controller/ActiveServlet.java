@@ -1,6 +1,6 @@
 package com.jit.common.controller;
 
-import com.jit.common.server.UserServer;
+import com.jit.common.service.UserService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,7 +11,7 @@ import java.io.IOException;
 
 @WebServlet("/active")
 public class ActiveServlet extends HttpServlet {
-    private UserServer userServer = new UserServer();
+    private UserService userServer = new UserService();
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String activeCode = req.getParameter("activeCode");

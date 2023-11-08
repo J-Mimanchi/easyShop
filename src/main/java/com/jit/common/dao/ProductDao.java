@@ -1,6 +1,6 @@
 package com.jit.common.dao;
 
-import com.jit.common.entitys.Product;
+import com.jit.common.domain.Product;
 import com.jit.common.utils.DataSourceUtil;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
