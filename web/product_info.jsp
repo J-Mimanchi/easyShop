@@ -32,14 +32,19 @@ body {
 		<div class="row">
 			<div
 				style="border: 1px solid #e4e4e4; margin-bottom: 10px; margin: 0 auto; padding: 10px; margin-bottom: 10px;">
-				<a href="${pageContext.request.contextPath}/productListByCid?cid=${param.cid}&currentPage=${param.currentPage}">&lt;&nbsp;&nbsp;返回</a>
+				<a href="${pageContext.request.contextPath}/productPage?cid=${param.cid}&currentPage=${param.currentPage}">&lt;&nbsp;&nbsp;返回</a>
+			</div>
+			<!-- 返回上一页 -->
+			<div>
+				<a href="${pageContext.request.contextPath}/productPage?cid=${cid }&currentPage=${currentPage}">返回商品列表
+				</a>
 			</div>
 
 			<div style="margin: 0 auto;">
 				<div class="col-md-6">
 					<img style="opacity: 1; width: 400px; height: 350px;" title=""
 						class="medium"
-						src="${product.pimage}">
+						src="${pageContext.request.contextPath }/${product.pimage}">
 				</div>
 
 				<div class="col-md-6">
@@ -88,8 +93,7 @@ body {
 				</div>
 
 				<div>
-					<img
-						src="${product.bigimage}" style=" width: 1170px; padding: 0px 0px; margin: 0px 0px;">
+					<img src="${product.pimage}" style=" width: 1170px; padding: 0px 0px; margin: 0px 0px;">
 				</div>
 
 				<div
@@ -144,6 +148,8 @@ body {
 					</table>
 				</div>
 			</div>
+
+
 
 		</div>
 	</div>

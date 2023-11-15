@@ -107,9 +107,9 @@
 	});
 
 	function hot_product_load(){
-		console.log("加载热门商品")
 		$.post("${pageContext.request.contextPath}/hotproduct",
 				function(datas) {
+			console.log(datas);
 					for(var index=0; index < datas.length; index++){
 						var data = datas[index]
 						var floorNo = data.floorNo;//获取楼层
