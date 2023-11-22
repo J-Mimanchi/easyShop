@@ -36,7 +36,7 @@ body {
 			</div>
 			<!-- 返回上一页 -->
 			<div>
-				<a href="${pageContext.request.contextPath}/productPage?cid=${cid }&currentPage=${currentPage}">返回商品列表
+				<a href="${pageContext.request.contextPath}/productPage?cid=${param.cid }&currentPage=${param.currentPage}">返回商品列表
 				</a>
 			</div>
 

@@ -50,5 +50,4 @@ public class PageBean <T>{
     public void setList(List<T> list) {
         this.list = list;
     }
-
 }

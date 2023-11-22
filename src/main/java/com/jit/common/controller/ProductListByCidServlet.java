@@ -44,7 +44,7 @@ public class ProductListByCidServlet extends HttpServlet {
                 if("pids".equals(c.getName()))
                 {
                     String pids = c.getValue();//获取字符串1,31,33,34
-                    String[] pids_arr = pids.split(",");
+                    String[] pids_arr = pids.split("&");
                     for(String pid : pids_arr)
                     {
                         //根据id查找商品
@@ -55,7 +55,7 @@ public class ProductListByCidServlet extends HttpServlet {
             }
         }
         req.setAttribute("historyList", historyList);
-
+        req.setAttribute("cid", cid);
 
         req.getRequestDispatcher("/product_list.jsp").forward(req, resp);
 

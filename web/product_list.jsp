@@ -37,7 +37,7 @@ body {
 		<div class="row container" style="margin: 0 auto; padding:0px 0px;">
 			<div class="col-md-12">
 				<ol class="breadcrumb">
-					<li><a href="product_list.jsp">首页</a></li>
+					<li><a href="index.jsp">首页</a></li>
 				</ol>
 			</div>
 			<c:forEach items="${pageBean.list }" var="product">
@@ -58,6 +58,7 @@ body {
 		<!--分页 -->
 		<div style="text-align: center;margin: 0 auto; margin-top: 50px;">
 			<ul class="pagination" style="text-align: center; margin-top: 10px;">
+
 				<c:choose>
 					<c:when test="${pageBean.currentPage==1}">
 						<li class="disabled"><a href="javascript:void(0);" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
@@ -78,6 +79,7 @@ body {
 						</c:otherwise>
 					</c:choose>
 				</c:forEach>
+
 				<c:choose>
 					<c:when test="${pageBean.currentPage==pageBean.totalPage}">
 						<li class="disabled"><a href="javascript:void(0);" aria-label="Next"> <span aria-hidden="true">&raquo;</span></a></li>
@@ -86,6 +88,7 @@ body {
 						<li><a href="${pageContext.request.contextPath}/productPage?cid=${param.cid}&currentPage=${pageBean.currentPage+1}" aria-label="Previous"><span aria-hidden="true">&raquo;</span></a></li>
 					</c:otherwise>
 				</c:choose>
+
 			</ul>
 		</div>
 		<!--分页结束 -->

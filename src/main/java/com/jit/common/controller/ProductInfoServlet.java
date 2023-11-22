@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -36,6 +38,7 @@ public class ProductInfoServlet extends HttpServlet {
 
         //1.从cookie中读取是否有名字是pids的值
         String pids = pid;
+
         //获取所有Cookie
         Cookie[] cookies = req.getCookies();
         if (cookies != null) {
@@ -53,8 +56,9 @@ public class ProductInfoServlet extends HttpServlet {
 					 */
                     pids = cookie.getValue();//1,2,3
 
+
                     //获取到cookie值后,处理,将字符串转为数组
-                    String[] strs = pids.split(",");//{1,2,3}
+                    String[] strs = pids.split("&");//{1,2,3}
                     //将数组转换为LinkedList操作更简便,先将数组转成List集合,再转成LinkedList集合
                     List<String> arrList = Arrays.asList(strs);
                     LinkedList<String> list = new LinkedList<>(arrList);
@@ -66,17 +70,16 @@ public class ProductInfoServlet extends HttpServlet {
                     //再将集合转为String
                     for (int i = 0; i < list.size() && i < 7; i++) {
                         sb.append(list.get(i));
-                        sb.append(",");
+                        sb.append("&");
                     }
                     pids = sb.substring(0, sb.length() - 1);
                     break;
                 }
             }
-            //创建Cookie,将新拼接好的pids携带回客户端
-            Cookie c = new Cookie("pids", pids);
-            resp.addCookie(c);
         }
-
+        //创建Cookie,将新拼接好的pids携带回客户端
+        Cookie c = new Cookie("pids", pids);
+        resp.addCookie(c);
 
         req.getRequestDispatcher("/product_info.jsp").forward(req, resp);
 
