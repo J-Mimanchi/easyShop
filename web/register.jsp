@@ -124,7 +124,7 @@ function submitForm(){
 }
 
 </script>
-	<form id="registForm" action="${pageContext.request.contextPath }/register"  method="post">
+	<form id="registForm" action="${pageContext.request.contextPath }/user?method=register"  method="post">
 		<div class="container_">
 			<div class="register-box">
 				<div class="reg-slogan">
@@ -177,7 +177,7 @@ function submitForm(){
 					//发送一个Ajax，到服务器进行验证用户存在
 					$.ajax({
 						"async":false,//同步操作
-						"url":"${pageContext.request.contextPath}/checkUsername",
+						"url":"${pageContext.request.contextPath}/user?method=checkUsername",
 						"type":"POST",
 						"data":{"username":value},
 						"dataType":"json",
@@ -237,8 +237,6 @@ function submitForm(){
 			});
 		})
 	</script>
-
-
 
 </div>
 </body>

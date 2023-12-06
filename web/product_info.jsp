@@ -32,11 +32,11 @@ body {
 		<div class="row">
 			<div
 				style="border: 1px solid #e4e4e4; margin-bottom: 10px; margin: 0 auto; padding: 10px; margin-bottom: 10px;">
-				<a href="${pageContext.request.contextPath}/productPage?cid=${param.cid}&currentPage=${param.currentPage}">&lt;&nbsp;&nbsp;返回</a>
+				<a href="${pageContext.request.contextPath}/product?method=productPage&cid=${param.cid}&currentPage=${param.currentPage}">&lt;&nbsp;&nbsp;返回</a>
 			</div>
 			<!-- 返回上一页 -->
 			<div>
-				<a href="${pageContext.request.contextPath}/productPage?cid=${param.cid }&currentPage=${param.currentPage}">返回商品列表
+				<a href="${pageContext.request.contextPath}/product?method=productPage&cid=${param.cid }&currentPage=${param.currentPage}">返回商品列表
 				</a>
 			</div>
 
@@ -44,7 +44,7 @@ body {
 				<div class="col-md-6">
 					<img style="opacity: 1; width: 400px; height: 350px;" title=""
 						class="medium"
-						src="${pageContext.request.contextPath }/${product.pimage}">
+						src="${pageContext.request.contextPath}/${product.pimage}">
 				</div>
 
 				<div class="col-md-6">

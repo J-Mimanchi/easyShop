@@ -83,7 +83,7 @@
 	$(function() {
 		//加载楼层信息
 		function floor_load(){
-			$.post("${pageContext.request.contextPath}/indexFloor",
+			$.post("${pageContext.request.contextPath}/product?method=indexFloor",
 					function(data) {
 						var index_cont = ''
 						for (var i = 0; i < data.length; i++) {
@@ -107,7 +107,7 @@
 	});
 
 	function hot_product_load(){
-		$.post("${pageContext.request.contextPath}/hotproduct",
+		$.post("${pageContext.request.contextPath}/product?method=hotproduct",
 				function(datas) {
 			console.log(datas);
 					for(var index=0; index < datas.length; index++){

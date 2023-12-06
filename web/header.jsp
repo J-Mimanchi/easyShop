@@ -73,12 +73,12 @@
 </div>
 <script>
 	$(function(){
-		$.post("${pageContext.request.contextPath}/navegationBar", function(data)
+		$.post("${pageContext.request.contextPath}/product?method=navegationBar", function(data)
 		{
 			var navbar = []
 			for(var i = 0; i < data.length; i++){
 				var category = data[i]
-				navbar.push('<li id="nvabar'+ data[i].cid +'"><a href= "${pageContext.request.contextPath}/productPage?cid='+data[i].cid+'"> '+ category.cname +'</a></li>')
+				navbar.push('<li id="nvabar'+ data[i].cid +'"><a href= "${pageContext.request.contextPath}/product?method=productPage&cid='+data[i].cid+'"> '+ category.cname +'</a></li>')
 			}
 			$('#categoryList').append(navbar.join(""))
 			setCurrentBar()
