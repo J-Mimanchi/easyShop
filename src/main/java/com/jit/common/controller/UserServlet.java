@@ -23,8 +23,9 @@ public class UserServlet extends HttpServlet {
         String methodName = req.getParameter("method");
         if("register".equals(methodName)) {
             register(req,resp);
+        } else if ("checkUsername".equals(methodName)) {
+            checkUsername(req,resp);
         }
-
 
 
     }
@@ -33,9 +34,7 @@ public class UserServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String methodName = req.getParameter("method");
-        if("checkUsername".equals(methodName)) {
-            checkUsername(req,resp);
-        } else if("active".equals(methodName)) {
+        if("active".equals(methodName)) {
             active(req,resp);
         }
     }
